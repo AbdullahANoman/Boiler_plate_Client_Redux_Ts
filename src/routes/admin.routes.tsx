@@ -1,4 +1,3 @@
-
 import AdminDashboard from "../pages/Admin/AdminDashboard";
 import CreateAdmin from "../pages/Admin/CreateAdmin";
 import CreateFaculty from "../pages/Admin/CreateFaculty";
@@ -21,16 +20,6 @@ export const adminPaths = [
     element: <AdminDashboard />,
   },
   {
-    name: "Dashboard",
-    path: "dashboard",
-    element: <AdminDashboard />,
-  },
-  {
-    name: "Dashboard",
-    path: "dashboard",
-    element: <AdminDashboard />,
-  },
-  {
     name: "User Management",
     children: [
       {
@@ -47,7 +36,7 @@ export const adminPaths = [
         name: "Create Student",
         path: "create-student",
         element: <CreateStudent />,
-      }
+      },
     ],
   },
 ];
@@ -96,8 +85,6 @@ export const adminPaths = [
 //   }
 //   return acc;
 // }, []);
-
-
 
 export const sideBarLinks = {};
 

@@ -4,15 +4,18 @@ import { sidebarItemsGenerator } from "../../utils/sidebarItemsGenerator";
 import { facultyPaths } from "../../routes/faculty.routes";
 import { studentPaths } from "../../routes/student.routes";
 import { NavLink } from "react-router-dom";
+import { useAppSelector } from "../../redux/hook";
+import { selectCurrentUser } from "../../redux/store";
 const { Sider } = Layout;
 
 const Sidebar = () => {
+  const user = useAppSelector(selectCurrentUser);
   const userRole = {
     ADMIN: "admin",
     FACULTY: "faculty",
     STUDENT: "student",
   };
-  const role = userRole.STUDENT;
+  const role = user!.userRole;
   let sidebarItems;
   switch (role) {
     case userRole.ADMIN:
@@ -32,9 +35,7 @@ const Sidebar = () => {
     <Sider
       breakpoint="lg"
       collapsedWidth="0"
-      onBreakpoint={(broken) => {
-        console.log(broken);
-      }}
+      onBreakpoint={() => {}}
       onCollapse={(collapsed, type) => {
         console.log(collapsed, type);
       }}
